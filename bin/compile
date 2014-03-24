@@ -21,6 +21,8 @@ echo "final dir = " `pwd` | indent
 echo "final dir contents: " | indent
 echo `ls *`
 
+echo "what is the env? " `printenv`
+
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/taglib.sh"
 mkdir -p $(dirname $PROFILE_PATH)
