@@ -9,19 +9,12 @@ BUILD_DIR=$1
 VENDOR_DIR="vendor"
 DOWNLOAD_URL="http://s3.amazonaws.com/purple-cloud-binaries/heroku/taglib.tar.gz"
 
-echo "BUILD_DIR = " $BUILD_DIR
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xz
-
-echo "final dir = " `pwd` | indent
-echo "final dir contents: " | indent
-echo `ls *`
-
-echo "what is the env? " `printenv`
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/taglib.sh"
